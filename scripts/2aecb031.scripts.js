@@ -1,1 +1,0 @@
-"use strict";angular.module("zf5appApp",[]).config(["$routeProvider",function(a){a.when("/",{templateUrl:"views/main.html",controller:"MainCtrl"}).otherwise({redirectTo:"/"})}]);
