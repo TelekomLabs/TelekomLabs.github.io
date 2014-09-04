@@ -171,10 +171,30 @@
 
       <section>
 
-        <section>
+        <section data-transition="none">
           <h2>Configuration Management</h2>
-          <img src="images/deployment_infrastructure.png">
+          <img src="images/configuration_01.png">
+        </section>
 
+        <section data-transition="none">
+          <h2>Configuration Management</h2>
+          <img src="images/configuration_02.png">
+        </section>
+
+        <section data-transition="none">
+          <h2>Configuration Management</h2>
+          <img src="images/configuration_03.png">
+        </section>
+
+        <section data-transition="none">
+          <h2>Configuration Management</h2>
+          <img src="images/configuration_04.png">
+        </section>
+
+
+        <section>
+          <h2>Configuration Infrastructure</h2>
+          <img src="images/deployment_infrastructure.png">
         </section>
 
         <section>
@@ -459,21 +479,6 @@
 
     // Optional libraries used to extend on reveal.js
     dependencies: [{
-      src: 'lib/js/classList.js',
-      condition: function() {
-        return !document.body.classList;
-      }
-    }, {
-      src: 'plugin/markdown/marked.js',
-      condition: function() {
-        return !!document.querySelector('[data-markdown]');
-      }
-    }, {
-      src: 'plugin/markdown/markdown.js',
-      condition: function() {
-        return !!document.querySelector('[data-markdown]');
-      }
-    }, {
       src: 'plugin/highlight/highlight.js',
       async: true,
       callback: function() {
@@ -481,12 +486,6 @@
       }
     }, {
       src: 'plugin/zoom-js/zoom.js',
-      async: true,
-      condition: function() {
-        return !!document.body.classList;
-      }
-    }, {
-      src: 'plugin/notes/notes.js',
       async: true,
       condition: function() {
         return !!document.body.classList;
