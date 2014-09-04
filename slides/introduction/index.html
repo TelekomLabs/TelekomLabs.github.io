@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Automatic Server Hardening - Hardening Framework</title>
+
+  <meta name="description" content="A framework for hardening servers">
+  <meta name="author" content="Christoph Hartmann">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/hardening.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+  if (window.location.search.match(/print-pdf/gi)) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'css/print/pdf.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section data-background="/images/background.jpeg">
+        <h1>Automatic Server Hardening</h1>
+        <h3>Hardening Framework</h3>
+        <p>
+          <img style="width: 20rem;" src="/images/poweredby.png">
+        </p>
+        <p>
+          <small>Created by <a href="http://lollyrock.com">Christoph Hartmann</a> / <a href="https://twitter.com/chri_hartmann">@chri_hartmann</a>
+          </small>
+        </p>
+      </section>
+
+      <section data-background="/images/tlabs.png">
+        <h2>About</h2>
+        <p>
+          <a href="https://github.com/chris-rock">
+            <img style="max-width: 9rem;border-radius: 150px;" src="/images/d09ed996.chris.jpeg">
+          </a>
+          <p>
+            Christoph Hartmann
+            <br>Deutsche Telekom Laboratories
+          </p>
+        </p>
+
+      </section>
+
+      <section data-background="/images/fire-91504_1280_darken.jpg">
+        <h2>Definition: Hardening</h2>
+        <blockquote>In metallurgy, an increase in hardness of a metal induced, deliberately or accidentally, by hammering, rolling, drawing, or other physical processes.</blockquote>
+        <span>Merriam Webster</span>
+      </section>
+
+      <section>
+        <section>
+          <h2>Why is hardening required?</h2>
+          <ol>
+            <li><a href="http://www.symantec.com/content/en/us/enterprise/other_resources/b-istr_main_report_v19_21291018.en-us.pdf"> Symantec Internet Security Threat Report 2014</a>
+            </li>
+            <li><a href="http://map.ipviking.com/">Norse</a>
+            </li>
+            <li><a href="http://www.sicherheitstacho.eu/?lang=en">Deutsche Telekom Sicherheitstacho</a>
+            </li>
+            <li><a href="http://www.honeynet.org/">The Honeypot Project</a>
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <style type="text/css">
+          #attacks {
+            list-style:none;
+            text-align: center;
+            padding: 50px 20px 50px 20px;
+          }
+          #attacks li .number {
+            font-size: 150%;
+            color: #e7ad52;
+          }
+          #attacks li {
+            line-height: 160%;
+          }
+          </style>
+
+          <h2>Honeypot attacks</h2>
+          <div>August 2014</div>
+
+          <ol id="attacks">
+            <li class="fragment"><span class="number">6 Million</span> attacks per month</li>
+            <li class="fragment"><span class="number">200.000</span> attacks per day</li>
+            <li class="fragment"><span class="number">8333</span> attacks per hour</li>
+            <li class="fragment"><span class="number">138</span> attacks per minute</li>
+          </ol>
+          <div></div>
+          <div><a href="http://www.sicherheitstacho.eu/?lang=en">Source: Deutsche Telekom Honeypot Infrastructure</a>
+        </section>
+
+        <section>
+
+          <style type="text/css">
+          #toptentypes {
+            list-style-type: none;
+            list-style-type: decimal !ie;
+            margin: 0;
+            margin-left: 4em;
+            counter-reset: li-counter;
+            padding: 50px 20px 50px 20px;
+          }
+          #toptentypes > li {
+            position: relative;
+          }
+          #toptentypes > li:before {
+            position: absolute;
+            top: 0;
+            left: -2.33em;
+            width: 1.2em;
+            height: 1.2em;
+            font-size: 0.9em;
+            line-height: 1.2;
+            text-align: center;
+            color: black;
+            border-radius: 50%;
+            background-color: #e7ad52;
+            content: counter(li-counter);
+            counter-increment: li-counter;
+          }
+          </style>
+
+          <h2>Information Breached</h2>
+          <ol id="toptentypes">
+            <li>Real Names</li>
+            <li>Birth Dates</li>
+            <li>Government ID Numbers</li>
+            <li>Home Adress</li>
+            <li>Medical Reports</li>
+            <li>Phone Numbers</li>
+            <li>Financial Information</li>
+            <li>Email Adresses</li>
+            <li>Username & Password</li>
+            <li>Insurance</li>
+          </ol>
+          <div><a href="http://www.symantec.com/content/en/us/enterprise/other_resources/b-istr_main_report_v19_21291018.en-us.pdf">Source: Symantec</a>
+          </div>
+        </section>
+
+      </section>
+
+      <section>
+
+        <section>
+          <h2>Configuration Management</h2>
+          <img src="/images/deployment_infrastructure.png">
+
+        </section>
+
+        <section>
+          <h2>Overlay Configuration</h2>
+          <img src="/images/9cc99e61.configmerge.png">
+        </section>
+      </section>
+
+      <section data-background="#000">
+        <h2>Component Overview</h2>
+        <img src="/images/components.png">
+      </section>
+
+      <section id="demo">
+      <style type="text/css">
+      #demo iframe.video {
+        width: 500px;
+        height: 300px;
+        }</style>
+        <h2>Demo</h2>
+        <iframe id="screen" class="video" src="https://player.vimeo.com/video/100302003?autoplay" frameborder="0" width="200px" height=webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </section>
+
+      <section id="ingredients" data-background="/images/spice-370114_640_darken.jpg">
+        <style type="text/css">
+        #ingredients table td,
+        #ingredients table th {
+          text-align: center;
+        }
+        #ingredients table td {
+          vertical-align: top;
+        }
+        #ingredients table img {
+          max-height: 7rem;
+        }
+
+        #os {
+          font-size: 20pt
+        }
+        </style>
+
+        <h2>Ingredients</h2>
+
+        <table class="reveal">
+          <tr>
+            <th width="25%">
+              <h4>Automation Frameworks</h4>
+            </th>
+            <th width="25%">
+              <h4>Infrastructure</h4>
+            </th>
+            <th width="25%">
+              <h4>Continous Integration</h4>
+            </th>
+            <th width="25%">
+              <h4>Operating Systems</h4>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <ol style="list-style:none; text-align: center;">
+                <li>
+                  <a href="http://www.getchef.com/">
+                    <img src="/images/40578845.chef.png">
+                    <br>
+                    <span style="font-weight:600">Chef</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://puppetlabs.com/">
+                    <img src="/images/d750c468.puppet.png">
+                    <br>
+                    <span style="font-weight:600">Puppet</span>
+                  </a>
+                </li>
+              </ol>
+            </td>
+            <td>
+
+              <ol style="list-style:none; text-align: center;">
+
+                <li>
+                  <a href="http://jenkins-ci.org/">
+                    <img src="/images/openstack_logo.png">
+                    <br>
+                    <span style="font-weight:600">OpenStack</span>
+                  </a>
+                </li>
+              </ol>
+            </td>
+            <td>
+
+
+              <ol style="list-style:none; text-align: center;">
+                <span style="font-weight:600">Security Tests</span>
+                <li>
+                  <a href="http://jenkins-ci.org/">
+                    <img src="/images/jenkins_headshot.png">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://serverspec.org/">
+                    <img src="/images/serverspec.png">
+                  </a>
+                </li>
+
+                <span style="font-weight:600">Source code</span>
+
+                <li><a href="https://github.com/bbatsov/rubocop">Robocop</a>
+                </li>
+                <li><a href="http://acrmp.github.io/foodcritic/">Foodcritic</a>
+                </li>
+                <li><a href="http://puppet-lint.com/">puppet-lint</a>
+                </li>
+              </ol>
+            </td>
+            <td>
+              <ol id="os" style="list-style:none; text-align: center;">
+                <li><a href="http://www.ubuntu.com/">Ubuntu 12.04</a>
+                </li>
+                <li><a href="http://www.ubuntu.com/">Ubuntu 14.04</a>
+                </li>
+                <li><a href="http://centos.org/">CentOS 6.4</a>
+                </li>
+                <li><a href="http://centos.org/">CentOS 6.5</a>
+                </li>
+                <li><a href="http://www.oracle.com/us/technologies/linux/overview/index.html">Oracle 6.4</a>
+                </li>
+                <li><a href="http://www.oracle.com/us/technologies/linux/overview/index.html">Oracle 6.5</a>
+                </li>
+                <li><a href="https://www.debian.org/">Debian 6</a>
+                </li>
+                <li><a href="https://www.debian.org/">Debian 7</a>
+                </li>
+              </ol>
+
+            </td>
+          </tr>
+        </table>
+
+
+      </section>
+
+
+      <section id="team">
+        <h2>Core Team</h2>
+
+        <style>
+        #team table td {
+          text-align: center;
+        }
+        #team table td .name {
+          font-size: 15pt;
+        }
+        #team img {
+          max-width: 9rem;
+          border-radius: 150px;
+        }
+        </style>
+
+        <table class="reveal">
+          <tr>
+            <td width="25%">
+              <a href="https://github.com/arlimus">
+                <img src="https://avatars0.githubusercontent.com/u/1307529?s=400">
+                <div class="name">Dominik Richter</div>
+              </a>
+            </td>
+            <td width="25%">
+              <a href="https://github.com/chris-rock">
+                <img src="/images/d09ed996.chris.jpeg">
+                <div class="name">Christoph Hartmann</div>
+              </a>
+            </td>
+
+            <td width="25%">
+              <a href="https://github.com/atomic111">
+                <img src="https://avatars0.githubusercontent.com/u/7220740?s=400">
+                <div class="name">Patrick Meier</div>
+              </a>
+            </td>
+            <td width="25%">
+              <a href="https://github.com/atomic111">
+                <img style="max-width: 9rem;border-radius: 150px;" src="https://avatars1.githubusercontent.com/u/18671?s=400">
+                <div class="name">Edmund Haselwanter</div>
+              </a>
+            </td>
+          </tr>
+        </table>
+
+      </section>
+
+      <section>
+        <style type="text/css">
+        #contributors img {
+          max-width: 5rem;
+          border-radius: 150px;
+          vertical-align:middle;
+        }
+
+        #contributors .name {
+          font-size: 15pt;
+        }
+
+        #contributors .entry {
+          width: 300px;
+          display: block;
+          text-align: left;
+          float: left;
+        }
+
+        </style>
+        <h2>Contributors</h2>
+        <div id="contributors">
+          <div>
+          <a class="entry" href="https://github.com/bkw">
+            <img src="https://avatars0.githubusercontent.com/u/60910?s=400">
+            <span class="name">Bernhard Weißhuhn</span>
+          </a>
+          <a class="entry" href="https://github.com/artem-sidorenko">
+            <img src="https://avatars1.githubusercontent.com/u/1645670?s=400">
+            <span class="name">Artem Sidorenko</span>
+          </a>
+          <a class="entry" href="https://github.com/spielkind">
+            <img src="https://avatars2.githubusercontent.com/u/4437264?s=400">
+            <span class="name">Reik Keutterling</span>
+          </a>
+          <a class="entry" href="https://github.com/danieldreier">
+            <img src="https://avatars2.githubusercontent.com/u/5070204?s=400">
+            <span class="name">Daniel Dreier</span>
+          </a>
+          <a class="entry" href="https://github.com/eumel8">
+            <img src="https://avatars0.githubusercontent.com/u/4410420?s=400">
+            <span class="name">Frank Kloeker</span>
+          </a>
+          <a class="entry" href="https://github.com/kurthuwig">
+            <img src="https://avatars1.githubusercontent.com/u/2757758?s=400">
+            <span class="name">Kurt Huwig</span>
+          </a>
+          <a class="entry" href="https://github.com/fadenb">
+            <img src="https://avatars0.githubusercontent.com/u/878822?s=400">
+            <span class="name">Tristan Helmich</span>
+          </a>
+          <a class="entry" href="https://github.com/3flex">
+            <img src="https://avatars1.githubusercontent.com/u/170028?s=400">
+            <span class="name">Matthew Haughton</span>
+          </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1>THE END</h1>
+        <p>Christoph Hartmann
+          <br>
+          <a href="http://telekomlabs.github.io/"> telekomlabs.github.io</a>
+        </p>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Parallax scrolling
+    // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    // parallaxBackgroundSize: '2100px 900px',
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [{
+      src: 'lib/js/classList.js',
+      condition: function() {
+        return !document.body.classList;
+      }
+    }, {
+      src: 'plugin/markdown/marked.js',
+      condition: function() {
+        return !!document.querySelector('[data-markdown]');
+      }
+    }, {
+      src: 'plugin/markdown/markdown.js',
+      condition: function() {
+        return !!document.querySelector('[data-markdown]');
+      }
+    }, {
+      src: 'plugin/highlight/highlight.js',
+      async: true,
+      callback: function() {
+        hljs.initHighlightingOnLoad();
+      }
+    }, {
+      src: 'plugin/zoom-js/zoom.js',
+      async: true,
+      condition: function() {
+        return !!document.body.classList;
+      }
+    }, {
+      src: 'plugin/notes/notes.js',
+      async: true,
+      condition: function() {
+        return !!document.body.classList;
+      }
+    }]
+  });
+  </script>
+
+</body>
+
+</html>
