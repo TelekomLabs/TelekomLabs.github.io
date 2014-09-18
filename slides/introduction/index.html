@@ -6,7 +6,7 @@
 
   <title>Automatic Server Hardening - Hardening Framework</title>
 
-  <meta name="description" content="A framework for hardening servers">
+  <meta name="description" content="A framework for server hardening">
   <meta name="author" content="Christoph Hartmann">
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -71,23 +71,27 @@
 
       <section data-background="images/fire-91504_1280_darken.jpg">
         <h2>Definition: Hardening</h2>
-        <blockquote>In metallurgy, an increase in hardness of a metal induced, deliberately or accidentally, by hammering, rolling, drawing, or other physical processes.</blockquote>
-        <span>Merriam Webster</span>
+        <blockquote>In computing, hardening is usually the process of securing a system by reducing its surface of vulnerability. </blockquote>
+        <span>Wikipedia</span>
       </section>
 
       <section>
         <section>
           <h2>Why is hardening required?</h2>
           <ol>
-            <li><a href="http://www.symantec.com/content/en/us/enterprise/other_resources/b-istr_main_report_v19_21291018.en-us.pdf"> Symantec Internet Security Threat Report 2014</a>
-            </li>
             <li><a href="http://map.ipviking.com/">Norse</a>
+            </li>
+            <li><a href="http://www.symantec.com/content/en/us/enterprise/other_resources/b-istr_main_report_v19_21291018.en-us.pdf"> Symantec Internet Security Threat Report 2014</a>
             </li>
             <li><a href="http://www.sicherheitstacho.eu/?lang=en">Deutsche Telekom Sicherheitstacho</a>
             </li>
             <li><a href="http://www.honeynet.org/">The Honeypot Project</a>
             </li>
           </ol>
+        </section>
+
+        <section data-background="images/norse.jpg">
+        Source: <a href="http://map.ipviking.com/">Norse</a>
         </section>
 
         <section>
@@ -155,7 +159,7 @@
             <li>Real Names</li>
             <li>Birth Dates</li>
             <li>Government ID Numbers</li>
-            <li>Home Adress</li>
+            <li>Home Address</li>
             <li>Medical Reports</li>
             <li>Phone Numbers</li>
             <li>Financial Information</li>
@@ -171,41 +175,54 @@
 
       <section>
 
+        <section>
+          <h2>Why not do manually?</h2>
+        </section>
+
+        <section>
+          <h2>Why not do manually?</h2>
+          <ol>
+            <li>Manual work is not 100% accurate</li>
+            <li>Every project need to reinvent the wheel</li>
+            <li>Expensive and time-consuming</li>
+            <li>Not applied for non-production environments</li>
+            <li>Divergent test & production environments</li>
+            <li>No measurement of compliance level</li>
+          </ol>
+        </section>
+
         <section data-transition="none">
-          <h2>Configuration Management</h2>
+          <h2>Server Scaling</h2>
           <img src="images/configuration_01.png">
         </section>
 
         <section data-transition="none">
-          <h2>Configuration Management</h2>
+          <h2>Server Scaling</h2>
           <img src="images/configuration_02.png">
         </section>
 
         <section data-transition="none">
-          <h2>Configuration Management</h2>
+          <h2>Server Scaling</h2>
           <img src="images/configuration_03.png">
         </section>
 
         <section data-transition="none">
-          <h2>Configuration Management</h2>
+          <h2>Server Scaling</h2>
           <img src="images/configuration_04.png">
         </section>
 
-
-        <section>
-          <h2>Configuration Infrastructure</h2>
-          <img src="images/deployment_infrastructure.png">
-        </section>
-
-        <section>
-          <h2>Overlay Configuration</h2>
-          <img src="images/9cc99e61.configmerge.png">
-        </section>
       </section>
 
-      <section data-background="#000">
-        <h2>Component Overview</h2>
-        <img src="images/components.png">
+      <section>
+        <section>
+            <h2>Approach</h2>
+            <img src="images/9cc99e61.configmerge.png">
+        </section>
+
+        <section data-background="#000">
+          <h2>Component Overview</h2>
+          <img src="images/components.png">
+        </section>
       </section>
 
       <section id="demo">
@@ -215,7 +232,10 @@
         height: 300px;
         }</style>
         <h2>Demo</h2>
-        <iframe id="screen" class="video" src="https://player.vimeo.com/video/100302003?autoplay" frameborder="0" width="200px" height=webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <video controls width="600px">
+          <source src="images/gate2.m4v" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </section>
 
       <section id="ingredients" data-background="images/spice-370114_640_darken.jpg">
@@ -313,6 +333,10 @@
             </td>
             <td>
               <ol id="os" style="list-style:none; text-align: center;">
+                <li><a href="http://redhat.com/">RedHat 6.4</a>
+                </li>
+                <li><a href="http://redhat.com/">RedHat 6.5</a>
+                </li>
                 <li><a href="http://www.ubuntu.com/">Ubuntu 12.04</a>
                 </li>
                 <li><a href="http://www.ubuntu.com/">Ubuntu 14.04</a>
@@ -448,8 +472,7 @@
 
       <section>
         <h1>THE END</h1>
-        <p>Christoph Hartmann
-          <br>
+        <p>
           <a href="http://telekomlabs.github.io/"> telekomlabs.github.io</a>
         </p>
       </section>
