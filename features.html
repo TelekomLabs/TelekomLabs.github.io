@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hardening Framework</title>
 
-    <link rel="stylesheet" href="styles/75a6c9e3.main.css"/>
+    <link rel="stylesheet" href="styles/b7c243bd.main.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
@@ -29,35 +29,38 @@
     <![endif]-->
 
     <!-- Nav -->
-    <div class="fixed contain-to-grid">
-      <nav class="top-bar" data-topbar="">
-        <ul class="title-area">
-          <!-- Title Area -->
-          <li class="name">
-            <h1>
-              <a href="/index.html" id="nav-logo">
-                Hardening Framework
-              </a>
-            </h1>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+            <a href="/index.html" id="nav-logo">
+              Hardening Framework
+            </a>
+          </h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><a href="/features.html">Features</a></li>
+          <li><a href="/articles.html">Articles</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/team.html">Team</a></li>
+          <li class="has-dropdown">
+            <a href="#">Community</a>
+            <ul class="dropdown">
+              <li><a href="https://github.com/TelekomLabs?query=hardening">GitHub</a></li>
+              <li><a href="https://forge.puppetlabs.com/hardening">Puppet Forge</a></li>
+              <li><a href="https://supermarket.getchef.com/cookbooks?q=hardening">Chef Community</a></li>
+            </ul>
           </li>
-          <li class="toggle-topbar menu-icon"><a href="#"></a></li>
         </ul>
 
-        <section class="top-bar-section">
-          <!-- Right Nav Section -->
-          <ul class="right">
-            <li><a href="/features.html">Features</a></li>
-            <li><a href="/articles.html">Articles & Videos</a></li>
-            <li><a href="/docs/">Docs</a></li>
-            <li><a href="/team.html">Team</a></li>
-            <li><a href="https://github.com/TelekomLabs?query=hardening">GitHub</a></li>
-            <li><a href="https://forge.puppetlabs.com/hardening">Puppet Forge</a></li>
-            <li><a href="https://supermarket.getchef.com/cookbooks?q=hardening">Chef Community</a></li>
-            <li><a href="/imprint.html">Imprint</a></li>
-          </ul>
-        </section>
-      </nav>
-    </div>
+      </section>
+    </nav>
     <!-- End Nav -->
 
     <span id="nav"></span>
@@ -71,13 +74,13 @@
     </div>
 
     <div class="row"><div class="large-8 medium-12 small-12 small-centered columns feature-box">
-    <div class="row features" data-equalizer="">
-        <div class="small-3 columns types" data-equalizer-watch="">
+    <div class="row features" data-equalizer>
+        <div class="small-3 columns types" data-equalizer-watch>
             <div>
                 <span class="green-checkmark">✓</span> Applications
             </div>
         </div>
-        <div class="small-9 columns content" data-equalizer-watch="">
+        <div class="small-9 columns content" data-equalizer-watch>
             <div class="row">
                 <div class="small-6 columns box mysql">
                     <a href="#mysql-hardening">
@@ -104,13 +107,13 @@
             </div>
         </div>
     </div>
-    <div class="row features" data-equalizer="">
-        <div class="small-3 columns types" data-equalizer-watch="">
+    <div class="row features" data-equalizer>
+        <div class="small-3 columns types" data-equalizer-watch>
             <div>
                 <span class="red-checkmark">✗</span> Operations
             </div>
         </div>
-        <div class="small-9 columns content" data-equalizer-watch="">
+        <div class="small-9 columns content" data-equalizer-watch>
             <div class="row">
                 <div class="small-4 columns box deactivated">
                     <a href="#">
@@ -130,13 +133,13 @@
             </div>
         </div>
     </div>
-    <div class="row features" data-equalizer="">
-        <div class="small-3 columns types" data-equalizer-watch="">
+    <div class="row features" data-equalizer>
+        <div class="small-3 columns types" data-equalizer-watch>
             <div>
                 <span class="green-checkmark">✓</span> OS
             </div>
         </div>
-        <div class="small-9 columns content" data-equalizer-watch="">
+        <div class="small-9 columns content" data-equalizer-watch>
             <div class="row">
                 <div class="small-12 columns box ssh">
                     <a href="#ssh-hardening">
@@ -153,13 +156,13 @@
             </div>
         </div>
     </div>
-    <div class="row features" data-equalizer="">
-        <div class="small-3 columns types" data-equalizer-watch="">
+    <div class="row features" data-equalizer>
+        <div class="small-3 columns types" data-equalizer-watch>
             <div>
                 <span class="red-checkmark">✗</span> Network
             </div>
         </div>
-        <div class="small-9 columns content" data-equalizer-watch="">
+        <div class="small-9 columns content" data-equalizer-watch>
             <div class="row">
                 <div class="small-6 columns box deactivated">
                     <a href="#">
@@ -485,7 +488,7 @@
     </footer>
     <!-- End Footer -->
 
-    <script src="scripts/4b374b42.modules.js"></script>
+    <script src="scripts/0e454fbf.modules.js"></script>
 
     <script src="scripts/f51122ec.scripts.js"></script>
 
