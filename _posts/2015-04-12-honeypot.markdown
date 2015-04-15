@@ -1,0 +1,12 @@
+---
+layout: default
+modal-id: 3
+date: 2015-07-12
+img: honeypot.jpg
+alt: DTAG Community Honeypot Project
+project-date: 2010 - ongoing
+client: Open Source
+category: Security
+description: <a href="http://dtag-dev-sec.github.io/">Deutsche Telekom's honeypot project</a> was started in 2010 by a small group of enthusiasts. We initially started with Lukas Rist's great Glastopf web honeypot and soon added further honeypot daemons like kippo, honeytrap and dionaea. Over the next years we deployed more and more honeypots.
+
+---
